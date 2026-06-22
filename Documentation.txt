@@ -1,0 +1,25 @@
+Here is a quick overview of the technologies, design approach, and inner workings of ConnectSphere:
+
+1. Technologies Used
+ConnectSphere runs entirely client-side (directly in the browser) without needing any backend server, databases, or installers. It uses:
+HTML5: To structure the landing page, input controls, statistics dashboard, and render the canvas area.
+Vanilla CSS3: Employs modern design systems utilizing CSS variables, responsive layout grids, flexbox alignment, and keyframe animations.
+Modern JavaScript (ES6+): Handles all application logic: data storage, recommendation score calculations, user interface updates, and rendering the custom physics-simulated node graph.
+
+2. How the App Works
+Initial State (Dashboard): The application loads with a pre-configured network of 6 users and their current friendships. A dashboard instantly calculates statistics like Total Users, Active Connections, and Potential Recommendations.
+Selecting a Profile: Using either the interactive dropdown menu or clicking a user node in the network graph, you select an active user (e.g., Rahul Sharma).
+Recommendation Calculations: The JavaScript engine computes recommendation scores for all users who are not currently friends with the selected user, using the formula: Recommendation Score=(Mutual Friends×60)+(Common Skills×20)+(Same City×20)
+Instant UI Updates: The dashboard dynamically lists recommended friends sorted from highest to lowest score with visual breakdowns. Simultaneously, the selected node is highlighted in the interactive network graph.
+
+3. How the App was Designed
+Glassmorphism Aesthetic: Inspired by modern macOS/iOS designs, the app uses semi-transparent frosted cards (backdrop-filter: blur()), subtle border shines, and radial gradient glow blobs floating in the background.
+Interactive Network Graph: Rendered dynamically using an HTML5 <canvas>. It runs a lightweight force-directed physics simulation (spring and repulsion algorithms) so you can click and drag user nodes, and hover paths will light up dynamically.
+Responsive Architecture: The layout uses fluid grid definitions that adapt automatically to different monitor sizes, tablets, or mobile displays.
+11:19 PM
+
+
+
+
+
+
